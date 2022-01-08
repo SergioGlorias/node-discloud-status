@@ -35,6 +35,28 @@ console.log(tr) //1GB
 
 ```
 
+## Forma de uso no JS com a API da DisCloud
+```js
+const DiscloudAPI = require("discloud-status");
+
+const status = new DiscloudAPI.APIstatus("Your API Key"); // podes obtê-lo digitando .api no canal de comandos
+
+// Obter as info do Bot da API
+status.getBot("Your Bot ID").then(bot => {
+    console.log(bot);
+});
+
+// Obter as info do Usuário da API
+status.getUser().then(user => {
+    console.log(user);
+});
+
+// Obter as Logs da API
+status.getBotLogs("Your bot id").then(logs => {
+ console.log(logs);
+}
+```
+
 ## Possíveis Erros
 Se um dos arquivos estiver vazio, ele retornará um erro como este:
 `Dados não encontrados`
